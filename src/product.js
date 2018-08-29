@@ -65,6 +65,8 @@ function validateRequest(joiModel) {
 				delete res.location;
 			}
 
+			res.business_id = 905; // eslint-disable-line camelcase
+
 			return res;
 		});
 	};
