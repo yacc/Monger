@@ -21,7 +21,7 @@ const ProductsJoi = Joi.object().keys({
 	per_page: Joi.number().default(21), // eslint-disable-line camelcase,
 	page: Joi.number().default(1),
 	category_ids: Joi.array(), // eslint-disable-line camelcase
-	make_detail_ids: Joi.array(), // eslint-disable-line camelcase
+	product_other_notes: Joi.string(), // eslint-disable-line camelcase
 	certification_ids: Joi.array(), // eslint-disable-line camelcase
 	query: Joi.string(),
 	location: Joi.string()
