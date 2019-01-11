@@ -27,7 +27,6 @@
 		"express": "^4.16.3",
 		"express-server-utils": "^1.1.0",
 		"joi": "^13.6.0",
-		"express-ip-access-control": "^1.0.5",
 		"qs": "^6.5.2"
 	}
 }
