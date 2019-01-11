@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const http = require('http');
 const {normalizePort} = require('./src/utils');
+const ipWhitelist = require('./ip-whitelist');
 
 const port = normalizePort(process.env.PORT || '4000');
 
@@ -14,11 +15,15 @@ if (isDev) {
 	require('dotenv').config();
 }
 
+// CORS
 const corsOption = {
 	methods: 'GET'
 };
-
 app.use(cors(corsOption));
+
+// Whitelisting
+// app.use(ipWhitelist(ipWhitelist.array([process.env.SEACREST_WP_IP])));
+app.use(ipWhitelist(ipWhitelist.array([process.env.seacrest_wp_ip,'157.230.132.162'])));
 
 // Uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
